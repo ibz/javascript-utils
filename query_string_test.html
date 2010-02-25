@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type="text/javascript" src="query_string.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+    var i, qs;
+
+    document.write("Client qs: ");
+    qs = qs_parse_client();
+    for (i in qs) {
+        document.write(i + " = " + qs[i]);
+    }
+    document.write("<br />");
+
+    document.write("Server qs: ");
+    qs = qs_parse_server();
+    for (i in qs) {
+        document.write(i + " = " + qs[i]);
+    }
+    document.write("<br />");
+</script>
+Client qs add: <input id="client_add" type="text" /> remove: <input id="client_remove" type="text" />
+<input type="button" value="set" onclick="javascript:qs_update_client(qs_str2obj(document.getElementById('client_add').value), document.getElementById('client_remove').value.split(','));" />
+<br />
+Server qs add: <input id="server_add" type="text" /> remove: <input id="server_remove" type="text" />
+<input type="button" value="set" onclick="javascript:qs_update_server(qs_str2obj(document.getElementById('server_add').value), document.getElementById('server_remove').value.split(','));" />
+</body>
