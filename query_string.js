@@ -1,3 +1,4 @@
+// See this for details: http://stackoverflow.com/questions/2316675/permalink-best-practices-for-ajax-pages
 
 function qs_str2obj(value) {
     // converts a string "key1=value1&key2=value2..." to an object {key1: val1, key2: val2, ...}
